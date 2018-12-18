@@ -58,7 +58,7 @@ def load_config(FLAGS):
     config = unicode_to_utf8(config_unicode)
 
     # Overwrite flags
-    for key, value in FLAGS.__flags.items():
+    for key, value in FLAGS.flag_values_dict().items():
         config[key] = value
 
     return config

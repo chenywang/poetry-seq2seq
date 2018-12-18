@@ -89,7 +89,7 @@ def train():
 
     with tf.Session(config=config_proto) as sess:
         # Build the model
-        config = OrderedDict(sorted(FLAGS.__flags.items()))
+        config = OrderedDict(sorted(FLAGS.flag_values_dict().items()))
         model = Seq2SeqModel(config, 'train')
 
         # Create a log writer object
